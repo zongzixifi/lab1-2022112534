@@ -1,0 +1,8 @@
+To explore strange new worlds,
+To seek out new life and new civilizations!
+And boldly go where no one has gone before.
+
+This is a simple example text:
+It tests punctuation removal,
+line breaks, and case normalization.
+Enjoy experimenting with your Lab1 program!
