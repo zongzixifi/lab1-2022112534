@@ -31,4 +31,4 @@ std::string generateNewText(const std::string& inputText);
 std::string calcShortestPath(const std::string& word1, const std::string& word2);
 
 #endif //LAB1_LAB1_H
-//git change test2
+//git change test
