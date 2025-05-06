@@ -20,9 +20,14 @@ int main() {
     std::string prev, curr;
     if (iss >> prev) {
         while (iss >> curr) {
+            std::cout << "加入边：" << prev << " -> " << curr << std::endl;
             graph[prev][curr]++;
             prev = curr;
         }
+        // 添加虚拟终结节点，确保句尾词也纳入图中
+        const std::string END_NODE = "__END__";
+        graph[prev][END_NODE]++;
+        std::cout << "加入边：" << prev << " -> " << END_NODE << std::endl;
     }
 
     while (true) {
@@ -54,11 +59,28 @@ int main() {
                 std::getline(std::cin, text);
                 std::cout << generateNewText(text) << "\n";
                 break;
-            case 4:
-                std::cout << "输入两个英文单词：";
-                std::cin >> word1 >> word2;
-                std::cout << calcShortestPath(word1, word2) << "\n";
+            case 4: {
+                std::string line;
+                std::cout << "输入一个或两个英文单词（用空格分隔）: ";
+                std::getline(std::cin, line);
+                std::istringstream iss(line);
+                std::vector<std::string> tokens;
+                std::string token;
+                while (iss >> token) tokens.push_back(token);
+
+                if (tokens.size() == 1) {
+                    const std::string& source = tokens[0];
+                    for (const auto& [target, _] : graph) {
+                        if (target != source)
+                            std::cout << calcShortestPath(source, target) << "\n";
+                    }
+                } else if (tokens.size() == 2) {
+                    std::cout << calcShortestPath(tokens[0], tokens[1]) << "\n";
+                } else {
+                    std::cout << "请输入1个或2个英文单词。\n";
+                }
                 break;
+            }
             case 5:
                 std::cout << "输入单词：";
                 std::cin >> word1;
@@ -136,9 +158,18 @@ double calPageRank(const std::string& word) {
     std::unordered_map<std::string, double> pr, new_pr;
     const int N = graph.size();
     if (N == 0 || graph.find(word) == graph.end()) return 0.0;
-
-    double init_val = 1.0 / N;
-    for (const auto& [node, _] : graph) pr[node] = init_val;
+    // 使用TF-IDF进行初始化
+    std::unordered_map<std::string, int> freq;
+    int total_freq = 0;
+    for (const auto& [from, edges] : graph) {
+        for (const auto& [to, count] : edges) {
+            freq[from] += count;
+            total_freq += count;
+        }
+    }
+    for (const auto& [node, _] : graph) {
+        pr[node] = (total_freq > 0) ? static_cast<double>(freq[node]) / total_freq : 1.0 / N;
+    }
 
     for (int iter = 0; iter < max_iter; ++iter) {
         double diff = 0.0;
@@ -288,11 +319,19 @@ std::string generateNewText(const std::string& inputText) {
     return output.str();
 }
 
+bool nodeExists(const std::string& word) {
+    if (graph.count(word)) return true; // 作为起点
+    for (const auto& [from, edges] : graph) {
+        if (edges.count(word)) return true; // 作为终点
+    }
+    return false;
+}
+
 std::string calcShortestPath(const std::string& word1, const std::string& word2) {
     std::ostringstream result;
-    if (!graph.count(word1) || !graph.count(word2)) {
-        result << "No " << word1 << " or " << word2 << " in the graph!";
-        return result.str();
+    if (!nodeExists(word1) || !nodeExists(word2)) {
+        std::cout << "No " << word1 << " or " << word2 << " in the graph!\n";
+        return "...";
     }
 
     std::unordered_map<std::string, int> dist;
@@ -343,3 +382,4 @@ std::string calcShortestPath(const std::string& word1, const std::string& word2)
 }
 
 //git change test
+//git change test2
