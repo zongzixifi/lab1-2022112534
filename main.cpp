@@ -41,7 +41,7 @@ int main() {
                   << "0. 退出\n选择：";
         int choice;
         std::cin >> choice;
-        std::cin.ignore();  // 清除换行符
+        std::cin.ignore();// 清除换行符
         if (choice == 0) break;
 
         std::string word1, word2, text;
@@ -70,7 +70,7 @@ int main() {
 
                 if (tokens.size() == 1) {
                     const std::string& source = tokens[0];
-                    for (const auto& [target, _] : graph) {
+                    for (const auto& [target, _]: graph) {
                         if (target != source)
                             std::cout << calcShortestPath(source, target) << "\n";
                     }
@@ -99,7 +99,7 @@ int main() {
 
 std::string cleanText(const std::string& input) {
     std::string cleaned;
-    for (char ch : input) {
+    for (char ch: input) {
         if (std::isalpha(ch)) {
             cleaned += std::tolower(ch);
         } else {
@@ -122,9 +122,9 @@ void showDirectedGraph(const std::unordered_map<std::string, std::unordered_map<
 
     // 输出图结构
     std::cout << "\n图的邻接表（边权为共现次数）：\n";
-    for (const auto& from : graph) {
+    for (const auto& from: graph) {
         std::cout << from.first << " -> ";
-        for (const auto& to : from.second) {
+        for (const auto& to: from.second) {
             std::cout << "(" << to.first << ", " << to.second << ") ";
         }
         std::cout << std::endl;
@@ -132,8 +132,8 @@ void showDirectedGraph(const std::unordered_map<std::string, std::unordered_map<
 
     std::ofstream dotFile("output.dot");
     dotFile << "digraph G {\n";
-    for (const auto& from : graph) {
-        for (const auto& to : from.second) {
+    for (const auto& from: graph) {
+        for (const auto& to: from.second) {
             dotFile << "  \"" << from.first << "\" -> \"" << to.first << "\" [label=\"" << to.second << "\"];\n";
         }
     }
@@ -161,28 +161,36 @@ double calPageRank(const std::string& word) {
     // 使用TF-IDF进行初始化
     std::unordered_map<std::string, int> freq;
     int total_freq = 0;
-    for (const auto& [from, edges] : graph) {
-        for (const auto& [to, count] : edges) {
+    for (const auto& [from, edges]: graph) {
+        for (const auto& [to, count]: edges) {
             freq[from] += count;
             total_freq += count;
         }
     }
-    for (const auto& [node, _] : graph) {
+    for (const auto& [node, _]: graph) {
         pr[node] = (total_freq > 0) ? static_cast<double>(freq[node]) / total_freq : 1.0 / N;
     }
 
     for (int iter = 0; iter < max_iter; ++iter) {
         double diff = 0.0;
-        for (const auto& [u, _] : graph) {
+        // 处理 dangling nodes（出度为0的节点）
+        double dangling_sum = 0.0;
+        for (const auto& [node, nbrs]: graph) {
+            if (nbrs.empty()) {
+                dangling_sum += pr[node];
+            }
+        }
+        for (const auto& [u, _]: graph) {
             double sum = 0.0;
-            for (const auto& [v, nbrs] : graph) {
+            for (const auto& [v, nbrs]: graph) {
                 if (nbrs.find(u) != nbrs.end()) {
                     int out_deg = nbrs.size();
-                    if (out_deg > 0)
+                    if (out_deg > 0) {
                         sum += pr[v] / out_deg;
+                    }
                 }
             }
-            new_pr[u] = (1.0 - damping) / N + damping * sum;
+            new_pr[u] = (1.0 - damping) / N + damping * (sum + dangling_sum / N);
             diff += std::abs(new_pr[u] - pr[u]);
         }
         pr = new_pr;
@@ -201,7 +209,7 @@ std::string queryBridgeWords(const std::string& word1, const std::string& word2)
     }
 
     std::vector<std::string> bridges;
-    for (const auto& mid : graph.at(word1)) {
+    for (const auto& mid: graph.at(word1)) {
         if (graph.find(mid.first) != graph.end() && graph.at(mid.first).count(word2)) {
             bridges.push_back(mid.first);
         }
@@ -234,7 +242,7 @@ std::string randomWalk() {
     std::mt19937 gen(rd());
 
     std::vector<std::string> nodes;
-    for (const auto& pair : graph) nodes.push_back(pair.first);
+    for (const auto& pair: graph) nodes.push_back(pair.first);
     std::uniform_int_distribution<> startDist(0, nodes.size() - 1);
     std::string current = nodes[startDist(gen)];
 
@@ -247,7 +255,7 @@ std::string randomWalk() {
     while (graph.count(current) && !graph.at(current).empty()) {
         const auto& neighbors = graph.at(current);
         std::vector<std::string> choices;
-        for (const auto& [to, _] : neighbors) {
+        for (const auto& [to, _]: neighbors) {
             choices.push_back(to);
         }
 
@@ -302,7 +310,7 @@ std::string generateNewText(const std::string& inputText) {
 
         std::vector<std::string> bridges;
         if (graph.count(words[i])) {
-            for (const auto& mid : graph.at(words[i])) {
+            for (const auto& mid: graph.at(words[i])) {
                 if (graph.count(mid.first) && graph.at(mid.first).count(words[i + 1])) {
                     bridges.push_back(mid.first);
                 }
@@ -320,9 +328,9 @@ std::string generateNewText(const std::string& inputText) {
 }
 
 bool nodeExists(const std::string& word) {
-    if (graph.count(word)) return true; // 作为起点
-    for (const auto& [from, edges] : graph) {
-        if (edges.count(word)) return true; // 作为终点
+    if (graph.count(word)) return true;// 作为起点
+    for (const auto& [from, edges]: graph) {
+        if (edges.count(word)) return true;// 作为终点
     }
     return false;
 }
@@ -341,7 +349,7 @@ std::string calcShortestPath(const std::string& word1, const std::string& word2)
     auto dijkstra = [&](const std::string& start) {
         dist.clear();
         prev.clear();
-        for (const auto& pair : graph) dist[pair.first] = INF;
+        for (const auto& pair: graph) dist[pair.first] = INF;
         dist[start] = 0;
 
         using P = std::pair<int, std::string>;
@@ -349,9 +357,10 @@ std::string calcShortestPath(const std::string& word1, const std::string& word2)
         pq.emplace(0, start);
 
         while (!pq.empty()) {
-            auto [d, u] = pq.top(); pq.pop();
+            auto [d, u] = pq.top();
+            pq.pop();
             if (d > dist[u]) continue;
-            for (const auto& [v, w] : graph.at(u)) {
+            for (const auto& [v, w]: graph.at(u)) {
                 if (dist[u] + w < dist[v]) {
                     dist[v] = dist[u] + w;
                     prev[v] = u;
