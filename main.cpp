@@ -52,7 +52,11 @@ int main() {
             case 2:
                 std::cout << "输入两个英文单词：";
                 std::cin >> word1 >> word2;
-                std::cout << queryBridgeWords(word1, word2) << "\n";
+                if (word1.empty() || word2.empty()) {
+                    std::cout << "输入不能为空！" << std::endl;
+                } else {
+                    std::cout << queryBridgeWords(word1, word2) << "\n";
+                }
                 break;
             case 3:
                 std::cout << "请输入新文本：";
