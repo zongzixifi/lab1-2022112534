@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/lab1.dir/main.cpp.o -c /Users/fengziyi/CLionProjects/lab1/main.cpp",
+  "file": "/Users/fengziyi/CLionProjects/lab1/main.cpp",
+  "output": "CMakeFiles/lab1.dir/main.cpp.o"
+}
+]
