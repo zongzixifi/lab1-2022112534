@@ -19,8 +19,7 @@
 #include <limits>
 #include <queue>
 
-
-std::unordered_map<std::string, std::unordered_map<std::string, int>> graph;
+extern std::unordered_map<std::string, std::unordered_map<std::string, int>> graph;
 
 std::string cleanText(const std::string& input);
 void showDirectedGraph(const std::unordered_map<std::string, std::unordered_map<std::string, int>>& graph);
@@ -29,6 +28,6 @@ std::string queryBridgeWords(const std::string& word1, const std::string& word2)
 std::string randomWalk();
 std::string generateNewText(const std::string& inputText);
 std::string calcShortestPath(const std::string& word1, const std::string& word2);
-
+int initGraph(const std::string& text);
 #endif //LAB1_LAB1_H
 //git change test
