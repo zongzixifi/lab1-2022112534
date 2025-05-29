@@ -1,8 +1,50 @@
 [
 {
   "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/lab1.dir/main.cpp.o -c /Users/fengziyi/CLionProjects/lab1/main.cpp",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz  -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/corelib.dir/lab1.cpp.o -c /Users/fengziyi/CLionProjects/lab1/lab1.cpp",
+  "file": "/Users/fengziyi/CLionProjects/lab1/lab1.cpp",
+  "output": "CMakeFiles/corelib.dir/lab1.cpp.o"
+},
+{
+  "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz  -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/corelib.dir/randomwalk.cpp.o -c /Users/fengziyi/CLionProjects/lab1/randomwalk.cpp",
+  "file": "/Users/fengziyi/CLionProjects/lab1/randomwalk.cpp",
+  "output": "CMakeFiles/corelib.dir/randomwalk.cpp.o"
+},
+{
+  "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz  -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/lab1.dir/main.cpp.o -c /Users/fengziyi/CLionProjects/lab1/main.cpp",
   "file": "/Users/fengziyi/CLionProjects/lab1/main.cpp",
   "output": "CMakeFiles/lab1.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest/include -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest  -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/runTests.dir/tests/test_code.cpp.o -c /Users/fengziyi/CLionProjects/lab1/tests/test_code.cpp",
+  "file": "/Users/fengziyi/CLionProjects/lab1/tests/test_code.cpp",
+  "output": "CMakeFiles/runTests.dir/tests/test_code.cpp.o"
+},
+{
+  "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz -I/Users/fengziyi/CLionProjects/lab1/googletest/googlemock/include -I/Users/fengziyi/CLionProjects/lab1/googletest/googlemock -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest/include -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1   -o googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /Users/fengziyi/CLionProjects/lab1/googletest/googlemock/src/gmock-all.cc",
+  "file": "/Users/fengziyi/CLionProjects/lab1/googletest/googlemock/src/gmock-all.cc",
+  "output": "googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -isystem /opt/homebrew/include/graphviz -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googlemock/include -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googlemock -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest/include -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1   -o googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /Users/fengziyi/CLionProjects/lab1/googletest/googlemock/src/gmock_main.cc",
+  "file": "/Users/fengziyi/CLionProjects/lab1/googletest/googlemock/src/gmock_main.cc",
+  "output": "googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz -I/Users/fengziyi/CLionProjects/lab1/googletest/googletest/include -I/Users/fengziyi/CLionProjects/lab1/googletest/googletest -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1   -o googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /Users/fengziyi/CLionProjects/lab1/googletest/googletest/src/gtest-all.cc",
+  "file": "/Users/fengziyi/CLionProjects/lab1/googletest/googletest/src/gtest-all.cc",
+  "output": "googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest/include -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1   -o googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /Users/fengziyi/CLionProjects/lab1/googletest/googletest/src/gtest_main.cc",
+  "file": "/Users/fengziyi/CLionProjects/lab1/googletest/googletest/src/gtest_main.cc",
+  "output": "googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
 }
 ]

@@ -11,7 +11,9 @@ link_directories(${GRAPHVIZ_LIB_DIR})
 
 add_library(corelib
         lab1.cpp
-        lab1.h)
+        lab1.h
+        randomwalk.cpp
+        randomwalk.cpp)
 
 # 主程序
 add_executable(lab1

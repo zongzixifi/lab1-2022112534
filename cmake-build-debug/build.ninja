@@ -56,6 +56,13 @@ build CMakeFiles/corelib.dir/lab1.cpp.o: CXX_COMPILER__corelib_unscanned_Debug /
   OBJECT_DIR = CMakeFiles/corelib.dir
   OBJECT_FILE_DIR = CMakeFiles/corelib.dir
 
+build CMakeFiles/corelib.dir/randomwalk.cpp.o: CXX_COMPILER__corelib_unscanned_Debug /Users/fengziyi/CLionProjects/lab1/randomwalk.cpp || cmake_object_order_depends_target_corelib
+  DEP_FILE = CMakeFiles/corelib.dir/randomwalk.cpp.o.d
+  FLAGS = -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics
+  INCLUDES = -I/opt/homebrew/include/graphviz
+  OBJECT_DIR = CMakeFiles/corelib.dir
+  OBJECT_FILE_DIR = CMakeFiles/corelib.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target corelib
@@ -64,7 +71,7 @@ build CMakeFiles/corelib.dir/lab1.cpp.o: CXX_COMPILER__corelib_unscanned_Debug /
 #############################################
 # Link the static library libcorelib.a
 
-build libcorelib.a: CXX_STATIC_LIBRARY_LINKER__corelib_Debug CMakeFiles/corelib.dir/lab1.cpp.o
+build libcorelib.a: CXX_STATIC_LIBRARY_LINKER__corelib_Debug CMakeFiles/corelib.dir/lab1.cpp.o CMakeFiles/corelib.dir/randomwalk.cpp.o
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk
   LANGUAGE_COMPILE_FLAGS = -fprofile-instr-generate -fcoverage-mapping -O0 -g -g
   OBJECT_DIR = CMakeFiles/corelib.dir

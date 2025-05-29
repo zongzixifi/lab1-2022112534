@@ -1,0 +1,5 @@
+Checks: '-*,readability-function-cognitive-complexity'
+CheckOptions:
+  - { key: readability-function-cognitive-complexity.Threshold, value: 0 }
+  - { key: readability-function-size.LineThreshold, value: 0 }
+  - { key: cyclomatic-complexity.Threshold, value: 10 }
