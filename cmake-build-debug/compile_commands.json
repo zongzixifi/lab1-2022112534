@@ -1,27 +1,21 @@
 [
 {
   "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz  -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/corelib.dir/lab1.cpp.o -c /Users/fengziyi/CLionProjects/lab1/lab1.cpp",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz  -fprofile-instr-generate -fcoverage-mapping -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/corelib.dir/lab1.cpp.o -c /Users/fengziyi/CLionProjects/lab1/lab1.cpp",
   "file": "/Users/fengziyi/CLionProjects/lab1/lab1.cpp",
   "output": "CMakeFiles/corelib.dir/lab1.cpp.o"
 },
 {
   "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz  -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/corelib.dir/randomwalk.cpp.o -c /Users/fengziyi/CLionProjects/lab1/randomwalk.cpp",
-  "file": "/Users/fengziyi/CLionProjects/lab1/randomwalk.cpp",
-  "output": "CMakeFiles/corelib.dir/randomwalk.cpp.o"
-},
-{
-  "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz  -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/lab1.dir/main.cpp.o -c /Users/fengziyi/CLionProjects/lab1/main.cpp",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz  -fprofile-instr-generate -fcoverage-mapping -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/lab1.dir/main.cpp.o -c /Users/fengziyi/CLionProjects/lab1/main.cpp",
   "file": "/Users/fengziyi/CLionProjects/lab1/main.cpp",
   "output": "CMakeFiles/lab1.dir/main.cpp.o"
 },
 {
   "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest/include -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest  -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/runTests.dir/tests/test_code.cpp.o -c /Users/fengziyi/CLionProjects/lab1/tests/test_code.cpp",
-  "file": "/Users/fengziyi/CLionProjects/lab1/tests/test_code.cpp",
-  "output": "CMakeFiles/runTests.dir/tests/test_code.cpp.o"
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -I/opt/homebrew/include/graphviz -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest/include -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest  -fprofile-instr-generate -fcoverage-mapping -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics -o CMakeFiles/runTests.dir/tests/white_test_code.cpp.o -c /Users/fengziyi/CLionProjects/lab1/tests/white_test_code.cpp",
+  "file": "/Users/fengziyi/CLionProjects/lab1/tests/white_test_code.cpp",
+  "output": "CMakeFiles/runTests.dir/tests/white_test_code.cpp.o"
 },
 {
   "directory": "/Users/fengziyi/CLionProjects/lab1/cmake-build-debug",

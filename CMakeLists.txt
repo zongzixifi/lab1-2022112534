@@ -11,9 +11,7 @@ link_directories(${GRAPHVIZ_LIB_DIR})
 
 add_library(corelib
         lab1.cpp
-        lab1.h
-        randomwalk.cpp
-        randomwalk.cpp)
+        lab1.h)
 
 # 主程序
 add_executable(lab1
@@ -29,7 +27,7 @@ include(GoogleTest)
 add_subdirectory(googletest)
 
 add_executable(runTests
-        tests/test_code.cpp
+        tests/white_test_code.cpp
 )
 
 target_include_directories(runTests PRIVATE
@@ -40,5 +38,6 @@ target_link_libraries(runTests corelib gtest gtest_main cgraph gvc)
 
 gtest_discover_tests(runTests)
 
-# 代码覆盖率（可选）
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-instr-generate -fcoverage-mapping -O0 -g")
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-instr-generate -fcoverage-mapping")
+endif()

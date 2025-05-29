@@ -51,14 +51,7 @@ build cmake_object_order_depends_target_corelib: phony || .
 
 build CMakeFiles/corelib.dir/lab1.cpp.o: CXX_COMPILER__corelib_unscanned_Debug /Users/fengziyi/CLionProjects/lab1/lab1.cpp || cmake_object_order_depends_target_corelib
   DEP_FILE = CMakeFiles/corelib.dir/lab1.cpp.o.d
-  FLAGS = -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics
-  INCLUDES = -I/opt/homebrew/include/graphviz
-  OBJECT_DIR = CMakeFiles/corelib.dir
-  OBJECT_FILE_DIR = CMakeFiles/corelib.dir
-
-build CMakeFiles/corelib.dir/randomwalk.cpp.o: CXX_COMPILER__corelib_unscanned_Debug /Users/fengziyi/CLionProjects/lab1/randomwalk.cpp || cmake_object_order_depends_target_corelib
-  DEP_FILE = CMakeFiles/corelib.dir/randomwalk.cpp.o.d
-  FLAGS = -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics
+  FLAGS = -fprofile-instr-generate -fcoverage-mapping -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics
   INCLUDES = -I/opt/homebrew/include/graphviz
   OBJECT_DIR = CMakeFiles/corelib.dir
   OBJECT_FILE_DIR = CMakeFiles/corelib.dir
@@ -71,9 +64,9 @@ build CMakeFiles/corelib.dir/randomwalk.cpp.o: CXX_COMPILER__corelib_unscanned_D
 #############################################
 # Link the static library libcorelib.a
 
-build libcorelib.a: CXX_STATIC_LIBRARY_LINKER__corelib_Debug CMakeFiles/corelib.dir/lab1.cpp.o CMakeFiles/corelib.dir/randomwalk.cpp.o
+build libcorelib.a: CXX_STATIC_LIBRARY_LINKER__corelib_Debug CMakeFiles/corelib.dir/lab1.cpp.o
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk
-  LANGUAGE_COMPILE_FLAGS = -fprofile-instr-generate -fcoverage-mapping -O0 -g -g
+  LANGUAGE_COMPILE_FLAGS = -fprofile-instr-generate -fcoverage-mapping -g
   OBJECT_DIR = CMakeFiles/corelib.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -91,7 +84,7 @@ build cmake_object_order_depends_target_lab1: phony || cmake_object_order_depend
 
 build CMakeFiles/lab1.dir/main.cpp.o: CXX_COMPILER__lab1_unscanned_Debug /Users/fengziyi/CLionProjects/lab1/main.cpp || cmake_object_order_depends_target_lab1
   DEP_FILE = CMakeFiles/lab1.dir/main.cpp.o.d
-  FLAGS = -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics
+  FLAGS = -fprofile-instr-generate -fcoverage-mapping -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics
   INCLUDES = -I/opt/homebrew/include/graphviz
   OBJECT_DIR = CMakeFiles/lab1.dir
   OBJECT_FILE_DIR = CMakeFiles/lab1.dir
@@ -105,7 +98,7 @@ build CMakeFiles/lab1.dir/main.cpp.o: CXX_COMPILER__lab1_unscanned_Debug /Users/
 # Link the executable lab1
 
 build lab1: CXX_EXECUTABLE_LINKER__lab1_Debug CMakeFiles/lab1.dir/main.cpp.o | libcorelib.a || libcorelib.a
-  FLAGS = -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk
+  FLAGS = -fprofile-instr-generate -fcoverage-mapping -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  libcorelib.a  -lcgraph  -lgvc
   LINK_PATH = -L/opt/homebrew/lib
   OBJECT_DIR = CMakeFiles/lab1.dir
@@ -123,9 +116,9 @@ build lab1: CXX_EXECUTABLE_LINKER__lab1_Debug CMakeFiles/lab1.dir/main.cpp.o | l
 
 build cmake_object_order_depends_target_runTests: phony || cmake_object_order_depends_target_corelib cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build CMakeFiles/runTests.dir/tests/test_code.cpp.o: CXX_COMPILER__runTests_unscanned_Debug /Users/fengziyi/CLionProjects/lab1/tests/test_code.cpp || cmake_object_order_depends_target_runTests
-  DEP_FILE = CMakeFiles/runTests.dir/tests/test_code.cpp.o.d
-  FLAGS = -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics
+build CMakeFiles/runTests.dir/tests/white_test_code.cpp.o: CXX_COMPILER__runTests_unscanned_Debug /Users/fengziyi/CLionProjects/lab1/tests/white_test_code.cpp || cmake_object_order_depends_target_runTests
+  DEP_FILE = CMakeFiles/runTests.dir/tests/white_test_code.cpp.o.d
+  FLAGS = -fprofile-instr-generate -fcoverage-mapping -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk -fcolor-diagnostics
   INCLUDES = -I/opt/homebrew/include/graphviz -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest/include -isystem /Users/fengziyi/CLionProjects/lab1/googletest/googletest
   OBJECT_DIR = CMakeFiles/runTests.dir
   OBJECT_FILE_DIR = CMakeFiles/runTests.dir/tests
@@ -138,8 +131,8 @@ build CMakeFiles/runTests.dir/tests/test_code.cpp.o: CXX_COMPILER__runTests_unsc
 #############################################
 # Link the executable runTests
 
-build runTests runTests[1]_tests.cmake | ${cmake_ninja_workdir}runTests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__runTests_Debug CMakeFiles/runTests.dir/tests/test_code.cpp.o | libcorelib.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a libcorelib.a
-  FLAGS = -fprofile-instr-generate -fcoverage-mapping -O0 -g -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk
+build runTests runTests[1]_tests.cmake | ${cmake_ninja_workdir}runTests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__runTests_Debug CMakeFiles/runTests.dir/tests/white_test_code.cpp.o | libcorelib.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a libcorelib.a
+  FLAGS = -fprofile-instr-generate -fcoverage-mapping -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  libcorelib.a  lib/libgtest_main.a  -lcgraph  -lgvc  lib/libgtest.a
   LINK_PATH = -L/opt/homebrew/lib
   OBJECT_DIR = CMakeFiles/runTests.dir
